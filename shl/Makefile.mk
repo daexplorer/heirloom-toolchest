@@ -4,7 +4,7 @@ shl: shl.o
 	$(LD) $(LDFLAGS) shl.o $(LCOMMON) $(LWCHAR) $(LIBS) -o shl
 
 shl.o: shl.c
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(XO5FL) $(IWCHAR) $(ICOMMON) -DSV3BIN='"$(SV3BIN)"' -DDEFBIN='"$(DEFBIN)"' -c shl.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(XO5FL) $(IWCHAR) -I/usr/lib/x86_64-redhat-linux5E/include $(ICOMMON) -DSV3BIN='"$(SV3BIN)"' -DDEFBIN='"$(DEFBIN)"' -c shl.c
 
 install: all
 	u=`uname`; \
